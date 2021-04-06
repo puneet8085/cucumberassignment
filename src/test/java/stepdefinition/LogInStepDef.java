@@ -4,18 +4,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AuthenticationPage;
+import pages.HomePage;
 import pages.MyAccountPage;
 
 import static org.junit.Assert.assertEquals;
 
 public class LogInStepDef {
 
+    HomePage homePage = new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     AuthenticationPage authenticationPage = new AuthenticationPage();
 
     @Given("I click on Sign In button from menu")
     public void clickOnSignIn() throws Exception {
-        myAccountPage.clickOnSignInFromMenu();
+        homePage.clickOnSignInFromMenu();
 
     }
 
@@ -26,7 +28,7 @@ public class LogInStepDef {
 
     }
     @Then("I can see page title as {string}")
-    public void enterFirstNameAndCurrentPassword(String expectedTitle) throws Exception
+    public void verifyPageTitle(String expectedTitle) throws Exception
     {
         assertEquals(expectedTitle,myAccountPage.getPageTitle());
     }

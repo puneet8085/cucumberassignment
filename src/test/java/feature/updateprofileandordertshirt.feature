@@ -5,7 +5,6 @@ Feature: Update user profile and place t-shirt order.
     When  I  enter username and password present in credential file  and click SignIn
     Then  I can see page title as "My account - My Store"
 
-
   @SmokeTest
   Scenario: Updating first name of Logged In User
 

@@ -13,6 +13,8 @@ public class PlaceOrderStepDef {
     PaymentPage paymentPage = new PaymentPage();
     OrderSummaryPage orderSummaryPage = new OrderSummaryPage();
     OrderHistoryPage orderHistoryPage = new OrderHistoryPage();
+    HomePage homePage = new HomePage();
+    TShirtPage tshirtPage = new TShirtPage();
 
     @Given("I click on Order History and Details button")
     public void clickOnOrderHistoryAndDetailsBtn()
@@ -29,14 +31,14 @@ public class PlaceOrderStepDef {
     @When("I go to T-shirt page")
     public void clickOnT_shirtMenu()
     {
-        myAccountPage.clickOnT_ShirtBtn();
+        homePage.clickOnT_ShirtBtn();
     }
 
     @When("Add a T-shirt into cart and click on proceed")
     public void addT_Shirt()
     {
-        myAccountPage.clickOnAddToCart();
-        myAccountPage.clickOnProceedToCheckout();
+        tshirtPage.clickOnAddToCart();
+        tshirtPage.clickOnProceedToCheckout();
     }
 
     @When("Click on proceed to checkout from summary tab")

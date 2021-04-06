@@ -3,12 +3,13 @@ package stepdefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HomePage;
 import pages.MyAccountPage;
 import pages.PersonalInfoPage;
 import static org.junit.Assert.assertTrue;
 
 public class UpdateProfileStepDef {
-
+    HomePage homePage = new HomePage();
     PersonalInfoPage personalInfoPage = new PersonalInfoPage();
     MyAccountPage myAccountPage = new MyAccountPage();
 
@@ -28,7 +29,7 @@ public class UpdateProfileStepDef {
     }
     @Then("I can see updated firstname of user next to Sign Out option")
     public void verifyUpdatedName() {
-       assertTrue(myAccountPage.verifyUpdatedFirstName());
+       assertTrue(homePage.verifyUpdatedFirstName());
     }
 
 }
