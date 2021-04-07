@@ -8,8 +8,8 @@ import utils.Driver;
 public class MyAccountPage extends Driver {
 
     private Logger logger;
-    By btnMyOrders =By.xpath("//a[@title='My orders']");
-    By btnMyPersonalInfo =By.xpath( "//a[@title= 'Manage my personal information']");
+    private By btnMyOrders =By.xpath("//a[@title='My orders']");
+    private By btnMyPersonalInfo =By.xpath( "//a[@title= 'Manage my personal information']");
 
     public MyAccountPage()
     {

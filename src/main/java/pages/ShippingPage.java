@@ -9,8 +9,8 @@ import utils.Driver;
 public class ShippingPage extends Driver {
 
     private Logger logger;
-    By btnProceedToCheckOut = By.xpath("//button[@class='button btn btn-default standard-checkout button-medium']/span[1]");
-    By chk_Terms = By.xpath("//input[@id='cgv']");
+    private By btnProceedToCheckOut = By.xpath("//button[@class='button btn btn-default standard-checkout button-medium']/span[1]");
+    private By chk_Terms = By.xpath("//input[@id='cgv']");
 
 
     public ShippingPage()

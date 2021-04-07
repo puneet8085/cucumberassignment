@@ -8,9 +8,9 @@ import utils.Driver;
 public class HomePage extends Driver {
 
     private Logger logger;
-    By linkSignIn = By.xpath("//a[@class='login'][contains(text(),'Sign in')]");
-    By menuT_Shirt = By.xpath("//div[@id='block_top_menu']/ul[1]/li[3]");
-    By userName =By.xpath("//a[@title= 'View my customer account']/span[1]");
+    private By linkSignIn = By.xpath("//a[@class='login'][contains(text(),'Sign in')]");
+    private By menuT_Shirt = By.xpath("//div[@id='block_top_menu']/ul[1]/li[3]");
+    private By userName =By.xpath("//a[@title= 'View my customer account']/span[1]");
 
     public HomePage()
     {

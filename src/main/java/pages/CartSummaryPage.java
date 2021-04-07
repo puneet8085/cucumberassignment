@@ -7,7 +7,7 @@ import utils.Driver;
 
 public class CartSummaryPage extends Driver {
     private Logger logger;
-    By btnProceedToCheckOut= By.xpath("//p[@class='cart_navigation clearfix']/a[1]");
+    private By btnProceedToCheckOut= By.xpath("//p[@class='cart_navigation clearfix']/a[1]");
 
     public CartSummaryPage()
     {

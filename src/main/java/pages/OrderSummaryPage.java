@@ -9,8 +9,8 @@ public class OrderSummaryPage extends Driver {
 
     private Logger logger;
     public static String orderRefValue;
-    By btnConfirmOrder= By.xpath("//span[contains(text(),'I confirm my order')]");
-    By orderId= By.xpath("//div[@class='box order-confirmation']");
+    private By btnConfirmOrder= By.xpath("//span[contains(text(),'I confirm my order')]");
+    private By orderId= By.xpath("//div[@class='box order-confirmation']");
 
     public OrderSummaryPage()
     {

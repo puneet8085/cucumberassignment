@@ -45,13 +45,13 @@ public class CommonUtils extends Driver {
         new WebDriverWait(driver,20).until(ExpectedConditions.visibilityOf(returnsWebElement(ele)));
         WebElement element=returnsWebElement(ele);
         if(element.isEnabled())
-        {
+         {
             element.click();
             element.sendKeys(Keys.CONTROL + "a");
             element.sendKeys(Keys.DELETE);
             element.sendKeys(text);
-        }
-    }
+         }
+     }
 
     //Get current date time with seconds
     public final static String getDateTimeWithSec()

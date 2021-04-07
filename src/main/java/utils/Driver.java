@@ -12,7 +12,8 @@ public class Driver {
     private Logger logger= Logger.getLogger(this.getClass());
 
     //initialise a instance of required browser
-    public void initializeBrowserAndOpenURL() throws Exception {
+    public void initializeBrowserAndOpenURL() throws Exception
+    {
         if(driver==null)
         {
             driver= DriverFactory.getDriver();
@@ -26,7 +27,8 @@ public class Driver {
     }
 
     //close the driver instance
-    public WebDriver closeDriver() throws Exception {
+    public WebDriver closeDriver() throws Exception
+    {
         ScreenshotLib.screenShot();
         driver.quit();
         logger.info("Browser Closed Successfully");

@@ -8,7 +8,7 @@ import utils.Driver;
 public class PaymentPage extends Driver {
 
     private Logger logger;
-    By btnPayByCheck= By.xpath( "//a[@title = 'Pay by check.']");
+    private By btnPayByCheck= By.xpath( "//a[@title = 'Pay by check.']");
 
     public PaymentPage()
     {

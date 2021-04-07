@@ -6,7 +6,8 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenshotLib extends Driver{
+public class ScreenshotLib extends Driver
+{
 
    public static void screenShot() throws IOException
    {

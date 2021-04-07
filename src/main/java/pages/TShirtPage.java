@@ -8,9 +8,9 @@ import utils.Driver;
 public class TShirtPage extends Driver {
 
     private Logger logger;
-    By imgT_Shirt = By.xpath("//img[@title='Faded Short Sleeve T-shirts']");
-    By btnAddToCart = By.xpath("//span[contains(text(),'Add to cart')]");
-    By btnProceedToCheckOut =By.xpath("//span[contains(text(),'Proceed to checkout')]");
+    private By imgT_Shirt = By.xpath("//img[@title='Faded Short Sleeve T-shirts']");
+    private By btnAddToCart = By.xpath("//span[contains(text(),'Add to cart')]");
+    private By btnProceedToCheckOut =By.xpath("//span[contains(text(),'Proceed to checkout')]");
 
     public TShirtPage()
     {

@@ -8,9 +8,9 @@ import utils.Driver;
 public class OrderHistoryPage extends Driver {
 
     private Logger logger;
-    static int existingOrderCount;
-    By orderTable = By.xpath("//table[@id='order-list']/tbody/tr");
-    String orderReference = "//table[@id='order-list']/tbody/tr['%s']/td[1]/a";
+    private static int existingOrderCount;
+    private By orderTable = By.xpath("//table[@id='order-list']/tbody/tr");
+    private String orderReference = "//table[@id='order-list']/tbody/tr['%s']/td[1]/a";
 
     public OrderHistoryPage() {
         objCommonUtils = new CommonUtils();
@@ -31,10 +31,13 @@ public class OrderHistoryPage extends Driver {
     //verify order in order summary table
     public boolean verifyOrder() {
         int updatedOrderCount = getOrderCount();
-        if (existingOrderCount== (updatedOrderCount - 1)) {
-            for (int i = 1; i <= updatedOrderCount; i++) {
+        if (existingOrderCount== (updatedOrderCount - 1))
+        {
+            for (int i = 1; i <= updatedOrderCount; i++)
+            {
                 String orderReferenceValue = objCommonUtils.returnsDynamicWebElement(orderReference,i).getText();
-                if (orderReferenceValue.equals(OrderSummaryPage.orderRefValue)) {
+                if (orderReferenceValue.equals(OrderSummaryPage.orderRefValue))
+                {
                     logger.info("Order is present in order history table");
                     return true;
                 }
