@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/feature",glue = "" ,
+@CucumberOptions(features = "src/test/resources/feature",glue = "" ,
         plugin = {"json:target/jsonReports/cucumber-report.json"},
         monochrome = true,tags="@SmokeTest")
 

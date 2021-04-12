@@ -4,11 +4,11 @@ import java.util.*;
 import java.io.*;
 public class ReadProperties
 {
-    public static String readDataFromPropertiesFile(String key,String filepath)throws Exception
+    public static String getData(String key,String filepath)throws Exception
     {
-            FileReader reader=new FileReader(filepath);
+            FileInputStream fileInputStream=new FileInputStream(filepath);
             Properties properties=new Properties();
-            properties.load(reader);
+            properties.load(fileInputStream);
             return properties.getProperty(key);
         }
 }

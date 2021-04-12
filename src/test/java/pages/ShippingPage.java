@@ -19,7 +19,7 @@ public class ShippingPage extends Driver {
         logger =Logger.getLogger(this.getClass());
     }
 
-    //select checkbox
+    //select checkbox for terms and condition
     public void selectCheckbox() throws InterruptedException {
         objCommonUtils.clickUsingJavaScriptExec(chk_Terms);
         logger.info("user select terms and condition checkbox");

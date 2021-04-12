@@ -1,11 +1,12 @@
 package stepdefinition;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.*;
+import static org.junit.Assert.*;
 
 public class PlaceOrderStepDef {
 
+    public static int existingOrderCount;
     MyAccountPage myAccountPage = new MyAccountPage();
     CartSummaryPage cartSummaryPage = new CartSummaryPage();
     AddressPage addressPage = new AddressPage();
@@ -16,45 +17,28 @@ public class PlaceOrderStepDef {
     HomePage homePage = new HomePage();
     TShirtPage tshirtPage = new TShirtPage();
 
-    @Given("I click on Order History and Details button")
+    @When("I select a t-shirt to order")
     public void clickOnOrderHistoryAndDetailsBtn()
     {
         myAccountPage.clickOnMyOrder();
-    }
-
-    @Given("I fetch total no. of existing orders")
-    public void getTotalOrderCount()
-    {
-       orderHistoryPage.getExistingOrderCount();
-    }
-
-    @When("I go to T-shirt page")
-    public void clickOnT_shirtMenu()
-    {
+        existingOrderCount=orderHistoryPage.getOrderCount();
         homePage.clickOnT_ShirtBtn();
-    }
-
-    @When("Add a T-shirt into cart and click on proceed")
-    public void addT_Shirt()
-    {
         tshirtPage.clickOnAddToCart();
-        tshirtPage.clickOnProceedToCheckout();
-    }
-
-    @When("Click on proceed to checkout from summary tab")
-    public void clickOnProceedToCheckout()  {
-        cartSummaryPage.clickOnProceedBtn();
     }
 
     @When("Complete order by making payment")
     public void completeOrder() throws InterruptedException
     {
+        tshirtPage.clickOnProceedToCheckout();
+        cartSummaryPage.clickOnProceedBtn();
         addressPage.clickOnProceedBtn();
         shippingPage.selectCheckbox();
         shippingPage.clickOnProceedBtn();
         paymentPage.clickOnPayByCheck();
         orderSummaryPage.clickOnConfirmOrderBtn();
-        orderSummaryPage.getOrderID();
+        orderSummaryPage.getActualOrderID();
+        assertNotNull("Order id is not null",OrderSummaryPage.orderRefValue);
+        myAccountPage.clickOnMyOrder();
     }
 
 }

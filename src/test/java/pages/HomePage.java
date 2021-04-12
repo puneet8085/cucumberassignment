@@ -18,20 +18,16 @@ public class HomePage extends Driver {
         logger =Logger.getLogger(this.getClass());
     }
 
-    //verify updated first name
-    public boolean verifyUpdatedFirstName()
+    //get first name value from the logged in User name present in top right corner
+    public String getFirstName()
     {
-        if(objCommonUtils.returnsWebElement(userName).getText().equals(""+PersonalInfoPage.firstName+" "+PersonalInfoPage.lastName))
-        {
-            logger.info("First name matched");
-            return true;
-        }
-        logger.info("First name not matched");
-        return false;
+        String username=objCommonUtils.getWebElement(userName).getText();
+        String firstname=username.split(" ")[0];
+        return firstname;
     }
 
     //click on Sign in Link from Menu
-    public  void clickOnSignInFromMenu()
+    public  void clickOnSignIn()
     {
         objCommonUtils.clickOnWebElement(linkSignIn);
         logger.info("user clicked in sign in from menu");

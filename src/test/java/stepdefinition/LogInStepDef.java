@@ -1,35 +1,27 @@
 package stepdefinition;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pages.AuthenticationPage;
 import pages.HomePage;
-import pages.MyAccountPage;
+import utils.CommonUtils;
 
 import static org.junit.Assert.assertEquals;
 
 public class LogInStepDef {
 
     HomePage homePage = new HomePage();
-    MyAccountPage myAccountPage = new MyAccountPage();
+    CommonUtils commonUtils= new CommonUtils();
     AuthenticationPage authenticationPage = new AuthenticationPage();
 
-    @Given("I click on Sign In button from menu")
-    public void clickOnSignIn() throws Exception {
-        homePage.clickOnSignInFromMenu();
-
-    }
-
-    @When("I  enter username and password present in credential file  and click SignIn")
-    public void enterCredentials() throws Exception {
-        authenticationPage.enterUserName();
-        authenticationPage.enterPassword();authenticationPage.clickOnSignInBtn();
-
-    }
-    @Then("I can see page title as {string}")
-    public void verifyPageTitle(String expectedTitle) throws Exception
+    @Given("I loggedIn into application and verify page title as {string}")
+    public void clickOnSignIn(String expectedTitle) throws Exception
     {
-        assertEquals(expectedTitle,myAccountPage.getPageTitle());
+        homePage.clickOnSignIn();
+        authenticationPage.enterUserName();
+        authenticationPage.enterPassword();
+        authenticationPage.clickOnSignInBtn();
+        assertEquals(expectedTitle,commonUtils.getPageTitle());
     }
+
+
 }

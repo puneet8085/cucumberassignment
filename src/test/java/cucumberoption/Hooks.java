@@ -2,6 +2,7 @@ package cucumberoption;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.apache.log4j.PropertyConfigurator;
 import utils.Driver;
 
 public class Hooks {
@@ -11,6 +12,7 @@ public class Hooks {
     @Before
     public void LaunchBrowser() throws Exception
     {
+        PropertyConfigurator.configure("./src/test/resources/config/log4j.properties");
         driver.initializeBrowserAndOpenURL();
     }
 

@@ -17,13 +17,6 @@ public class MyAccountPage extends Driver {
         logger =Logger.getLogger(this.getClass());
     }
 
-    //Get Current Page Title
-    public String getPageTitle()
-    {
-        logger.info("Get current page title");
-        return driver.getTitle();
-    }
-
     //click on my personal info button
     public void clickOnMyPersonalInfoBtn()
     {

@@ -6,30 +6,31 @@ import io.cucumber.java.en.When;
 import pages.HomePage;
 import pages.MyAccountPage;
 import pages.PersonalInfoPage;
-import static org.junit.Assert.assertTrue;
 
+import static org.junit.Assert.assertEquals;
 public class UpdateProfileStepDef {
-    HomePage homePage = new HomePage();
+
+    private String expected_FirstName;
     PersonalInfoPage personalInfoPage = new PersonalInfoPage();
     MyAccountPage myAccountPage = new MyAccountPage();
+    HomePage homePage=new HomePage();
 
-    @Given("^I click on My Personal Information button$")
+    @Given("^I go to My Personal Information page$")
     public void clickOnPersonalInfoBtn() throws Throwable {
         myAccountPage.clickOnMyPersonalInfoBtn();
     }
 
-    @When("Enter firstname as {string} and current password")
+    @When("I click on Save after entering firstname as {string} and current password")
     public void enterFirstNameAndCurrentPassword(String firstname) throws Exception {
-        personalInfoPage.enterDetails(firstname);
-    }
-    @When("I click on Save Button")
-    public void clickOnSaveBtn() {
+        personalInfoPage.updateFirstName(firstname);
+        expected_FirstName=personalInfoPage.getExpectedFirstName();
         personalInfoPage.clickOnSaveBtn();
-
     }
+
     @Then("I can see updated firstname of user next to Sign Out option")
-    public void verifyUpdatedName() {
-       assertTrue(homePage.verifyUpdatedFirstName());
+    public void verifyUpdatedName()
+    {
+       assertEquals(expected_FirstName,homePage.getFirstName());
     }
 
 }
