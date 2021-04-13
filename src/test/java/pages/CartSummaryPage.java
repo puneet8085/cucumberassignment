@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 import utils.CommonUtils;
 import utils.Driver;
 
-public class CartSummaryPage extends Driver {
+public class CartSummaryPage extends Driver
+{
     private Logger logger;
     private By btnProceedToCheckOut= By.xpath("//p[@class='cart_navigation clearfix']/a[1]");
 

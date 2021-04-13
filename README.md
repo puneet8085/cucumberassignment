@@ -25,4 +25,4 @@ Way 3 to Run
 * use of split function in place of substring function in OrderSummayPage class
 
 # Path for Cucumber HTML Report 
-go to target folder ---> expand cucumber-html-reports folder and then open overview-features.html file in browser
+go to target folder ---> expand cucumber-html-reports folder and then open cucumber-reports.html file in browser

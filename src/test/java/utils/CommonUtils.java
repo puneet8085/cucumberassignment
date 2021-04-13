@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -45,7 +44,7 @@ public class CommonUtils extends Driver {
         return driver.getTitle();
     }
 
-    //Enters text in a WebElement
+    //Enter data in a text box
     public void enterData(By ele, String text)
     {
         new WebDriverWait(driver,default_Time).until(ExpectedConditions.visibilityOf(getWebElement(ele)));
@@ -57,7 +56,7 @@ public class CommonUtils extends Driver {
          }
      }
 
-     //clear text from webElement
+     //clear text from text box
     public void clearData(By ele)
     {
         new WebDriverWait(driver, default_Time).until(ExpectedConditions.visibilityOf(getWebElement(ele)));

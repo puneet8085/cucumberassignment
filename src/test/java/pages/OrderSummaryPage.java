@@ -19,11 +19,10 @@ public class OrderSummaryPage extends Driver {
     }
 
     //Extract order number from text
-    public void getActualOrderID()
+    public void getOrderID()
     {
         orderRefValue=objCommonUtils.getWebElement(orderId).getText();
         orderRefValue  = orderRefValue.substring(146,(orderRefValue.length()-214));
-        logger.info("order number fetched successfully");
     }
     //click on confirm my order
     public void clickOnConfirmOrderBtn()

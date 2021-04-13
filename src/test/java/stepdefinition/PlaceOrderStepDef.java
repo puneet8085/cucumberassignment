@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 public class PlaceOrderStepDef {
 
-    public static int existingOrderCount;
     MyAccountPage myAccountPage = new MyAccountPage();
     CartSummaryPage cartSummaryPage = new CartSummaryPage();
     AddressPage addressPage = new AddressPage();
@@ -21,7 +20,7 @@ public class PlaceOrderStepDef {
     public void clickOnOrderHistoryAndDetailsBtn()
     {
         myAccountPage.clickOnMyOrder();
-        existingOrderCount=orderHistoryPage.getOrderCount();
+        OrderHistoryPage.existingOrderCount=orderHistoryPage.getOrderCount();
         homePage.clickOnT_ShirtBtn();
         tshirtPage.clickOnAddToCart();
     }
@@ -36,7 +35,7 @@ public class PlaceOrderStepDef {
         shippingPage.clickOnProceedBtn();
         paymentPage.clickOnPayByCheck();
         orderSummaryPage.clickOnConfirmOrderBtn();
-        orderSummaryPage.getActualOrderID();
+        orderSummaryPage.getOrderID();
         assertNotNull("Order id is not null",OrderSummaryPage.orderRefValue);
         myAccountPage.clickOnMyOrder();
     }

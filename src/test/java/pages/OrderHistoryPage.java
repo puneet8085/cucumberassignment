@@ -11,6 +11,7 @@ import utils.Driver;
 public class OrderHistoryPage extends Driver {
 
     private Logger logger;
+    public static int existingOrderCount;
     private By orderTable = By.xpath("//table[@id='order-list']/tbody/tr");
     private By orderReference =By.xpath("//table[@id='order-list']/tbody/tr[1]/td[1]/a");
 
@@ -29,7 +30,7 @@ public class OrderHistoryPage extends Driver {
     public String getExpectedOrderID()
     {
      String expectedOrderID = null;
-     if (PlaceOrderStepDef.existingOrderCount == (getOrderCount() - 1))
+     if(existingOrderCount == (getOrderCount() - 1))
      {
        expectedOrderID= objCommonUtils.getWebElement(orderReference).getText();
      }

@@ -18,7 +18,7 @@ public class HomePage extends Driver {
         logger =Logger.getLogger(this.getClass());
     }
 
-    //get first name value from the logged in User name present in top right corner
+    //get first name value from user name present in top right corner
     public String getFirstName()
     {
         String username=objCommonUtils.getWebElement(userName).getText();
