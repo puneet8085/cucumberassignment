@@ -19,8 +19,6 @@ public class PlaceOrderStepDef {
     @When("I select a t-shirt to order")
     public void clickOnOrderHistoryAndDetailsBtn()
     {
-        myAccountPage.clickOnMyOrder();
-        OrderHistoryPage.existingOrderCount=orderHistoryPage.getOrderCount();
         homePage.clickOnT_ShirtBtn();
         tshirtPage.clickOnAddToCart();
     }

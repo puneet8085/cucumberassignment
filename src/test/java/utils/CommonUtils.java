@@ -32,12 +32,6 @@ public class CommonUtils extends Driver {
         return driver.findElement(element);
     }
 
-    //Returns List of WebElement
-    public List<WebElement> getListOfWebElements(By element)
-    {
-        return driver.findElements(element);
-    }
-
     //Get Current Page Title
     public String getPageTitle()
     {
