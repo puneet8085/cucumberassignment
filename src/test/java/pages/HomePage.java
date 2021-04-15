@@ -40,4 +40,10 @@ public class HomePage extends Driver {
         logger.info("user clicked on t-shirt menu");
     }
 
+    //verify page load by checking page title
+    public String verifyPageTitle()
+    {
+       return objCommonUtils.getPageTitle();
+    }
+
 }

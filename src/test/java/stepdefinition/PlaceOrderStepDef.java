@@ -35,7 +35,7 @@ public class PlaceOrderStepDef {
         orderSummaryPage.clickOnConfirmOrderBtn();
         orderSummaryPage.getOrderID();
         assertNotNull("Order id is not null",OrderSummaryPage.orderRefValue);
-        myAccountPage.clickOnMyOrder();
+
     }
 
 }

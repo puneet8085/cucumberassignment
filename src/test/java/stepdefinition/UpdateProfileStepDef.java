@@ -16,21 +16,23 @@ public class UpdateProfileStepDef {
     HomePage homePage=new HomePage();
 
     @Given("^I go to My Personal Information page$")
-    public void clickOnPersonalInfoBtn() throws Throwable {
+    public void clickOnPersonalInfoBtn()
+    {
         myAccountPage.clickOnMyPersonalInfoBtn();
+        assertEquals("Identity - My Store",myAccountPage.verifyPageLoad());
     }
 
-    @When("I click on Save after entering firstname as {string} and current password")
+    @When("I save changes by entering firstname as {string} and current password")
     public void enterFirstNameAndCurrentPassword(String firstname) throws Exception {
         personalInfoPage.updateFirstName(firstname);
         expected_FirstName=personalInfoPage.getExpectedFirstName();
         personalInfoPage.clickOnSaveBtn();
     }
 
-    @Then("I can see updated firstname of user next to Sign Out option")
+    @Then("I see updated firstname of user next to Sign Out option")
     public void verifyUpdatedName()
     {
-       assertEquals(expected_FirstName,homePage.getFirstName());
+        assertEquals(expected_FirstName,homePage.getFirstName());
     }
 
 }

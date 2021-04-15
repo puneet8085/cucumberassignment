@@ -13,7 +13,7 @@ public class Hooks {
     public void LaunchBrowser() throws Exception
     {
         PropertyConfigurator.configure("./src/test/resources/config/log4j.properties");
-        driver.initializeBrowserAndOpenURL();
+        driver.openApplication();
     }
 
     @After

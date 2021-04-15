@@ -9,7 +9,6 @@ import utils.ReadProperties;
 public class AuthenticationPage extends Driver {
 
     private Logger logger;
-    public static String credential_Properties_Path="./src/test/resources/config/credential.properties";
     private By txtEmailAddress= By.xpath( "//input[@id='email']");
     private By txtPassword= By.xpath( "//input[@id='passwd']");
     private By btnSignIn= By.xpath( "//button[@id='SubmitLogin']");
@@ -23,14 +22,14 @@ public class AuthenticationPage extends Driver {
     //enter email address
     public void enterUserName() throws Exception
     {
-        objCommonUtils.enterData(txtEmailAddress, ReadProperties.getData("userName",credential_Properties_Path));
+        objCommonUtils.enterData(txtEmailAddress, ReadProperties.getData("userName", CREDENTIAL_PROPERTIES_PATH));
         logger.info("Username entered  successfully");
     }
 
     //enter Password
     public void enterPassword() throws Exception
     {
-        objCommonUtils.enterData(txtPassword,ReadProperties.getData("password",credential_Properties_Path));
+        objCommonUtils.enterData(txtPassword,ReadProperties.getData("password", CREDENTIAL_PROPERTIES_PATH));
         logger.info("Password entered  successfully");
     }
 

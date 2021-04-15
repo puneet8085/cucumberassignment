@@ -10,7 +10,6 @@ import utils.Driver;
 public class OrderHistoryPage extends Driver {
 
     private Logger logger;
-    private By orderTable = By.xpath("//table[@id='order-list']/tbody/tr");
     private By orderReference =By.xpath("//table[@id='order-list']/tbody/tr[1]/td[1]/a");
 
     public OrderHistoryPage() {
@@ -19,9 +18,9 @@ public class OrderHistoryPage extends Driver {
     }
 
     //verify order in order summary table
-    public boolean verifyOrderID() {
+    public boolean verifyOrderID(String orderRefValue) {
 
-      boolean flag=new WebDriverWait(driver, 20).until(ExpectedConditions.textToBe(orderReference,OrderSummaryPage.orderRefValue));
+      boolean flag=new WebDriverWait(driver, DEFAULT_TIME).until(ExpectedConditions.textToBe(orderReference,orderRefValue));
         return flag;
 
     }

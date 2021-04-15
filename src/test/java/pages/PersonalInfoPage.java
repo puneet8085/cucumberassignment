@@ -11,7 +11,6 @@ public class PersonalInfoPage extends Driver {
     private Logger logger;
     private By txtFirstName= By.xpath("//input[@id='firstname']");
     private By txtOldPassword= By.xpath( "//input[@id='old_passwd']");
-    private By txtLastName= By.xpath("//input[@id='lastname']");
     private By btnSave= By.xpath( "//button[@name='submitIdentity']");
 
     public PersonalInfoPage()
@@ -26,7 +25,7 @@ public class PersonalInfoPage extends Driver {
         objCommonUtils.clearData(txtFirstName);
         objCommonUtils.enterData(txtFirstName,firstname);
         objCommonUtils.clearData(txtOldPassword);
-        objCommonUtils.enterData(txtOldPassword, ReadProperties.getData("password", AuthenticationPage.credential_Properties_Path));
+        objCommonUtils.enterData(txtOldPassword, ReadProperties.getData("password", CREDENTIAL_PROPERTIES_PATH));
         logger.info("user enter first name and password");
     }
 
