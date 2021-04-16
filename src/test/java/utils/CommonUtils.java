@@ -18,8 +18,8 @@ public class CommonUtils extends Driver {
     private final String DEFAULT_TIME_FORMAT ="yyyy-MM-dd_hh_mm_ss_S";
 
     /***
-     * This method is created to perform click operation on a WebElement.It waits for 20 second and check visibility of WebElement and then perform click.
-     * @param element accepts element in By format
+     * Click on a WebElement.
+     * @param element accepts locator in By format
      */
      public void clickOnWebElement(By element)
     {
@@ -28,9 +28,9 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to change element type from By into WebElement
-     * @param element accepts element in By format
-     * @return  return a element into WebElement format.
+     * Find a WebElement from the By locator provided
+     * @param element accepts element
+     * @return  element into WebElement format.
      */
     public WebElement getWebElement(By element)
     {
@@ -39,8 +39,8 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to get title of current page
-     * @return returns page title in String format
+     * Get title of current page
+     * @return Page title in String format
      */
     public String getPageTitle()
     {
@@ -48,7 +48,7 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to enter text inside text box
+     * Enter text based o locator provided
      * @param ele accepts element in By format
      * @param text accepts text in string format which user want ot enter inside text box
      */
@@ -64,7 +64,7 @@ public class CommonUtils extends Driver {
      }
 
     /***
-     * This method is created to clear text present in text box.
+     * Clear text present in element based on locator provided
      * @param ele accepts element in By format
      */
     public void clearData(By ele)
@@ -79,8 +79,8 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to take screenshot and save it inside screenshot folder
-     * @throws IOException throws IO Exception on failure.
+     * Takes screenshot and save.
+     * @throws IOException on failure.
      */
     public void takeScreenShot() throws IOException
     {
@@ -90,8 +90,8 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to get current date and time with seconds.
-     * @return return time in yyyy-MM-dd_hh_mm_ss_S format as a String value.
+     * Get current date and time with seconds.
+     * @return Time in yyyy-MM-dd_hh_mm_ss_S format as a String value.
      */
     public String getDateTimeWithSec()
     {
@@ -101,7 +101,7 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to click on a element which is hidden inside another element
+     * Click on a element
      * @param element1 element where user need to move first
      * @param element2 Second element at which user want to perform click operation
      */
@@ -114,7 +114,7 @@ public class CommonUtils extends Driver {
     }
 
     /***
-     * This method is created to perform click operation on a element using java script executor
+     * Click on a element using java script executor
      * @param webElement accepts element in By Format.
      */
     public void clickUsingJavaScriptExec(By webElement)

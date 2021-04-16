@@ -41,7 +41,7 @@ public class HomePage extends Driver {
     }
 
     //verify page load by checking page title
-    public String verifyPageTitle()
+    public String getTitle()
     {
        return objCommonUtils.getPageTitle();
     }

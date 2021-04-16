@@ -19,7 +19,7 @@ public class UpdateProfileStepDef {
     public void clickOnPersonalInfoBtn()
     {
         myAccountPage.clickOnMyPersonalInfoBtn();
-        assertEquals("Identity - My Store",myAccountPage.verifyPageLoad());
+        assertEquals("Identity - My Store",homePage.getTitle());
     }
 
     @When("I save changes by entering firstname as {string} and current password")

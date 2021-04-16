@@ -24,7 +24,7 @@ First, Clone project from mentioned GitHub location into your local machine
 3. Run "Runner" file present in cucumberoption package under src/test/java
 
 # Path for Cucumber HTML Report
-Open target folder ---> Open cucumber-html-reports folder --> Open cucumber-reports.html file in browser
+Open target folder ---> Open cucumber-reports folder --> Open cucumber.html file in browser
 
 #Improvements/Suggestion:
 Like any other framework this framework too has the scope of improvements. 

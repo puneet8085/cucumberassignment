@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 public class LogInStepDef {
 
-    private String expectedPageTitle="Login - My Store";
     HomePage homePage = new HomePage();
     CommonUtils objCommonUtils= new CommonUtils();
     AuthenticationPage authenticationPage = new AuthenticationPage();
@@ -17,7 +16,7 @@ public class LogInStepDef {
     public void clickOnSignIn(String expectedTitle) throws Exception
     {
         homePage.clickOnSignIn();
-        assertEquals(expectedPageTitle,homePage.verifyPageTitle());
+        assertEquals("Login - My Store",homePage.getTitle());
         authenticationPage.enterUserName();
         authenticationPage.enterPassword();
         authenticationPage.clickOnSignInBtn();

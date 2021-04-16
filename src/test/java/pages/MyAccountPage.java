@@ -24,12 +24,6 @@ public class MyAccountPage extends Driver {
         logger.info("user clicked on my personal info button");
     }
 
-    //verify page load by page title
-    public String verifyPageLoad()
-    {
-       return objCommonUtils.getPageTitle();
-    }
-
     //click on my order button
     public void clickOnMyOrder()
     {

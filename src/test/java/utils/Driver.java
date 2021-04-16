@@ -16,7 +16,7 @@ public class Driver {
     private final String Driver_EXE_PATH="/src/test/resources/driver";
 
     /***
-     * This method first maximize initialised browser window and then open application URL and waits till page load
+     * Maximize initialised browser window and open application URL.
      * @throws Exception throws Exception on failure.
      */
     public void openApplication() throws Exception
@@ -28,9 +28,9 @@ public class Driver {
     }
 
     /***
-     * This method is created to initialise browser based on value present inside default.properties
-     * @return it return instance of browser based on browser name provided.
-     * @throws Exception  throws exception on failure.
+     * Initialise browser.
+     * @return instance of browser based on browser name provided.
+     * @throws Exception on failure.
      */
     public WebDriver getDriver() throws Exception {
         if(driver==null)
@@ -57,9 +57,9 @@ public class Driver {
 
 
     /***
-     * This method is created to take screenshot of browser window and to close all open browser window.
-     * @return it return driver value as null.
-     * @throws Exception throws Exception on failure
+     * Take screenshot of browser window and to close all open browser window.
+     * @return driver value as null.
+     * @throws Exception on failure
      */
     public WebDriver closeDriver() throws Exception
     {
